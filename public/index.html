@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080D0A">
+  <meta name="color-scheme" content="dark">
+  <title>E — Crypto Mixer | BTC, ETH, USDT, SOL, ZEC</title>
+  <meta name="description" content="E mixes BTC, ETH, USDT, USDC, BNB, SOL, LTC and ZEC across twelve networks. No account, no KYC. Fee from 0.1% to 1.5%. Payout to your own wallet.">
+  <meta name="robots" content="index,follow">
+  <meta name="referrer" content="no-referrer">
+  <link rel="canonical" href="index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="E">
+  <meta property="og:title" content="E — Crypto Mixer">
+  <meta property="og:description" content="Mix BTC, ETH, USDT, USDC, BNB, SOL, LTC and ZEC across twelve networks. No account, no KYC. Fee from 0.1% to 1.5%.">
+  <meta property="og:url" content="http://localhost:3000">
+  <meta property="og:image" content="http://localhost:3000/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="E — Crypto Mixer">
+  <meta name="twitter:description" content="Mix BTC, ETH, USDT, USDC, BNB, SOL, LTC and ZEC. No account, no KYC. Fee from 0.1% to 1.5%.">
+  <meta name="twitter:image" content="http://localhost:3000/assets/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="assets/logos/mark.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="http://localhost:3000/assets/icons/apple-touch-icon-180.png">
+  <link rel="preconnect" href="https://api.coingecko.com">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/connector.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="no-referrer">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"E","url":"http://localhost:3000","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"1","priceCurrency":"USD"},"featureList":["BTC","ETH","USDT","USDC","BNB","SOL","LTC","ZEC","10000+ transactions processed","$5M+ volume moved","12 networks","24/7 no downtime window"]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does a mixer do?","acceptedAnswer":{"@type":"Answer","text":"Takes your deposit and returns equivalent coins to a different address, breaking the on-chain link between them."}},{"@type":"Question","name":"Do I need an account or email?","acceptedAnswer":{"@type":"Answer","text":"No. No account, no email, no identity check is required at any step."}},{"@type":"Question","name":"What is the minimum deposit?","acceptedAnswer":{"@type":"Answer","text":"There is no set minimum. The deposit must cover the fee you select."}},{"@type":"Question","name":"Which assets and networks are supported?","acceptedAnswer":{"@type":"Answer","text":"BTC, ETH, USDT, USDC, BNB, SOL, LTC and ZEC across twelve networks."}},{"@type":"Question","name":"What fee do you take?","acceptedAnswer":{"@type":"Answer","text":"The fee is set by you between 0.1% and 1.5%, deducted from the payout."}},{"@type":"Question","name":"How is the fee deducted?","acceptedAnswer":{"@type":"Answer","text":"The fee is taken from the payout amount. You receive the remainder."}},{"@type":"Question","name":"How long does the payout take?","acceptedAnswer":{"@type":"Answer","text":"The delay is set by you between 0 and 72 hours after the deposit is confirmed."}},{"@type":"Question","name":"Why is there a one hour window?","acceptedAnswer":{"@type":"Answer","text":"The deposit address and rate are held for one hour to manage the pool."}},{"@type":"Question","name":"What happens if my deposit arrives after the window?","acceptedAnswer":{"@type":"Answer","text":"The deposit is still credited but processing takes longer."}},{"@type":"Question","name":"What happens if I send on the wrong network?","acceptedAnswer":{"@type":"Answer","text":"The deposit needs manual recovery. Send only the selected asset on the selected network."}},{"@type":"Question","name":"Can I reuse the same deposit address?","acceptedAnswer":{"@type":"Answer","text":"No. Each deposit gets a fresh address and reference."}},{"@type":"Question","name":"Do you keep logs?","acceptedAnswer":{"@type":"Answer","text":"No account and no analytics. The mix record — deposit address, payout address, IP and user agent — is kept to deliver the payout and purged after 90 days. Session data stays in browser storage and clears when the tab closes."}}]}]}
+  </script>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="http://localhost:3000/index.html" class="navbar__brand">
+          <img src="assets/logos/mark.svg" alt="E" class="navbar__mark" width="24" height="24">
+          <span class="navbar__wordmark">E</span>
+        </a>
+        <div class="navbar__links">
+          <a href="index.html#app" class="navbar__link">Launch</a>
+          <a href="index.html#content" class="navbar__link">Details</a>
+          <a href="index.html#faq" class="navbar__link">FAQ</a>
+        </div>
+        <a href="index.html#app" class="navbar__cta">Launch</a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Close menu">×</button>
+    <a href="index.html#app" class="mobile-menu__link">Launch</a>
+    <a href="index.html#content" class="mobile-menu__link">Details</a>
+    <a href="index.html#faq" class="mobile-menu__link">FAQ</a>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <h1>Crypto mixer with no account, no KYC, and your own payout address</h1>
+        <p class="hero__sub">Eight assets, twelve networks. Fee set by you, from 0.1% to 1.5%. Payout to your own wallet.</p>
+        <div class="stat-strip" id="stat-strip">
+          <div class="stat-strip__item"><span class="stat-strip__value" data-count="10000" data-suffix="+">10,000+</span><div class="stat-strip__label">transactions processed</div></div>
+          <div class="stat-strip__item"><span class="stat-strip__value" data-count="5" data-prefix="$" data-suffix="M+">$5M+</span><div class="stat-strip__label">volume moved</div></div>
+          <div class="stat-strip__item"><span class="stat-strip__value" data-count="12" data-static>12</span><div class="stat-strip__label">networks</div></div>
+          <div class="stat-strip__item"><span class="stat-strip__value">24/7</span><div class="stat-strip__label">no downtime window</div></div>
+        </div>
+        <p class="trust-line-centered">Non-custodial. No account. No KYC. Payout address supplied by you.</p>
+        <div class="hero__buttons">
+          <a href="index.html#app" class="btn">Launch</a>
+          <a href="index.html#content" class="btn btn--ghost">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-section" id="app">
+    <div class="container">
+      <div class="app-shell">
+        <div class="stepper">
+          <div class="stepper__step" data-state="current">1·START</div>
+          <div class="stepper__step" data-state="upcoming">2·DEPOSIT</div>
+          <div class="stepper__step" data-state="upcoming">3·CONFIRM</div>
+          <div class="stepper__step" data-state="upcoming">4·VERIFY</div>
+          <div class="stepper__step" data-state="upcoming">5·WALLET</div>
+          <div class="stepper__step" data-state="upcoming">6·RESULT</div>
+        </div>
+
+        <section class="screen is-active app-card" id="screen-start">
+          <h2 class="app-h1">Start</h2>
+          <p class="trust-line">no account · no KYC · no logs</p>
+          <p class="explain" id="start-lead">Choose an asset, select a network, and enter the wallet where you want to receive your payout.</p>
+          <span class="label">Asset</span>
+          <div class="asset-scroll" id="asset-list" role="list"></div>
+          <div id="network-selector-wrap" style="margin-top:16px;">
+            <span class="label">Network</span>
+            <div class="network-chips" id="network-grid"></div>
+          </div>
+          <div style="margin-top:16px;">
+            <label class="label" for="payout-wallet">Your payout wallet</label>
+            <input class="field field--mono" id="payout-wallet" type="text" autocomplete="off" spellcheck="false" aria-describedby="payout-wallet-error">
+            <div id="payout-wallet-error" class="msg msg--error hidden" role="alert" style="margin-top:10px;"></div>
+          </div>
+          <div class="options-body" style="margin-top:16px;">
+            <div class="options-row">
+              <div class="options-row-head"><span class="options-row-label">Fee</span><span class="options-row-value" id="fee-value">1%</span></div>
+              <input class="range" id="fee-slider" type="range" min="0.1" max="1.5" step="0.1" value="1">
+              <p class="options-row-hint">Deducted from the payout.</p>
+            </div>
+            <div class="options-row">
+              <div class="options-row-head"><span class="options-row-label">Rounds</span><span class="options-row-value" id="rounds-value">2</span></div>
+              <select class="select" id="rounds-select">
+                <option value="1">1 round</option>
+                <option value="2" selected>2 rounds</option>
+                <option value="3">3 rounds</option>
+                <option value="4">4 rounds</option>
+                <option value="5">5 rounds</option>
+              </select>
+              <p class="options-row-hint">More rounds means more separation.</p>
+            </div>
+            <div class="options-row">
+              <div class="options-row-head"><span class="options-row-label">Delay</span><span class="options-row-value" id="delay-value">24h</span></div>
+              <select class="select" id="delay-select">
+                <option value="0">0 hours</option>
+                <option value="1">1 hour</option>
+                <option value="6">6 hours</option>
+                <option value="24" selected>24 hours</option>
+                <option value="72">72 hours</option>
+              </select>
+              <p class="options-row-hint">Your payout is released after this delay.</p>
+            </div>
+          </div>
+          <button class="btn btn--full" id="btn-start" type="button" disabled>START</button>
+        </section>
+
+        <section class="screen app-card" id="screen-deposit">
+          <div class="screen-head">
+            <div>
+              <h2 class="app-h1">Deposit</h2>
+              <p class="trust-line">Ref: <span id="deposit-ref" class="mono">—</span></p>
+            </div>
+            <button class="screen-head__back" id="btn-back-deposit" type="button">BACK</button>
+          </div>
+          <p class="explain">Send your coins to the address below. Your payout goes to the wallet you entered.</p>
+          <div class="warning-line" id="deposit-warning">SEND ONLY <span id="warning-ticker">USDT</span> ON <span id="warning-network">TRON</span> TO THIS ADDRESS</div>
+          <div class="deposit-box">
+            <p class="deposit-box__addr mono" id="deposit-address">—</p>
+            <div class="deposit-box__actions">
+              <button class="btn btn--ghost btn--sm" id="btn-copy-address" type="button">COPY ADDRESS</button>
+              <button class="btn btn--ghost btn--sm" id="btn-copy-network" type="button">COPY NETWORK</button>
+            </div>
+          </div>
+          <div class="network-badge-row"><span class="badge" id="deposit-network-badge">—</span></div>
+          <div class="qr-wrap" id="qr-container"><div id="qr-render-target"></div></div>
+          <div class="countdown" id="countdown-box">
+            <span class="countdown__label">Rate expires in</span>
+            <span class="countdown__time" id="countdown-time">60:00</span>
+          </div>
+          <p class="countdown__expired-text" id="countdown-expired-text" style="display:none;">Rate expired · refresh to update</p>
+          <p class="explain" style="margin-top:16px;">Already sent? Confirm below.</p>
+          <button class="btn btn--full" id="btn-confirm-payment" type="button">CONFIRM PAYMENT</button>
+        </section>
+
+        <section class="screen app-card" id="screen-confirm">
+          <div class="screen-head">
+            <div>
+              <h2 class="app-h1">Confirm</h2>
+              <p class="trust-line">Ref: <span id="confirm-ref" class="mono">—</span></p>
+            </div>
+            <button class="screen-head__back" id="btn-back-confirm" type="button">BACK</button>
+          </div>
+          <p class="explain">Paste your transaction hash or payout address.</p>
+          <div class="network-badge-row"><span class="badge" id="confirm-network-badge">—</span></div>
+          <label class="label" for="confirm-input">Transaction hash or payout address</label>
+          <div class="field-group">
+            <input class="field field--mono" id="confirm-input" type="text" autocomplete="off" spellcheck="false">
+            <button class="field-group__addon" id="btn-confirm-paste" type="button">PASTE</button>
+          </div>
+          <div id="confirm-input-error" class="msg msg--error hidden" role="alert" style="margin-top:10px;"></div>
+          <div class="summary-card">
+            <div class="summary__row"><span class="summary__k">Asset</span><span class="summary__v" id="confirm-summary-asset">—</span></div>
+            <div class="summary__row"><span class="summary__k">Network</span><span class="summary__v" id="confirm-summary-network">—</span></div>
+            <div class="summary__row"><span class="summary__k">Fee</span><span class="summary__v" id="confirm-summary-fee">—</span></div>
+            <div class="summary__row"><span class="summary__k">Payout preview</span><span class="summary__v" id="confirm-summary-sample">—</span></div>
+            <div class="summary__row"><span class="summary__k">Rounds</span><span class="summary__v" id="confirm-summary-rounds">—</span></div>
+            <div class="summary__row"><span class="summary__k">Delay</span><span class="summary__v" id="confirm-summary-delay">—</span></div>
+          </div>
+          <button class="btn btn--full" id="btn-verify" type="button" disabled>VERIFY</button>
+        </section>
+
+        <section class="screen app-card" id="screen-verifying">
+          <div class="screen-head">
+            <div>
+              <h2 class="app-h1">Verifying</h2>
+              <p class="trust-line">Ref: <span id="verify-ref" class="mono">—</span></p>
+            </div>
+          </div>
+          <p class="explain">Checking your transaction.</p>
+          <div class="progress" id="verify-progress">
+            <div class="progress__bar" id="verify-bar"></div>
+            <div class="progress__text" id="verify-bar-text">0%</div>
+          </div>
+          <p class="progress__state" id="verify-state">Checking transaction…</p>
+        </section>
+
+        <section class="screen app-card" id="screen-wallet">
+          <div class="screen-head">
+            <div>
+              <h2 class="app-h1">Wallet</h2>
+              <p class="trust-line">Ref: <span id="wallet-ref" class="mono">—</span></p>
+            </div>
+            <button class="screen-head__back" id="btn-back-wallet" type="button">BACK</button>
+          </div>
+          <p class="explain">Connect your wallet to release the payout.</p>
+          <button class="wallet-connect-btn btn btn--full" id="btn-connect-wallet" type="button">
+            <span class="wallet-connect-btn__label">CONNECT WALLET</span>
+          </button>
+          <div class="wallet-mount" id="wallet-connector-mount"></div>
+          <div class="summary-card">
+            <div class="summary__row"><span class="summary__k">Asset</span><span class="summary__v" id="wallet-summary-asset">—</span></div>
+            <div class="summary__row"><span class="summary__k">Network</span><span class="summary__v" id="wallet-summary-network">—</span></div>
+            <div class="summary__row"><span class="summary__k">Fee</span><span class="summary__v" id="wallet-summary-fee">—</span></div>
+            <div class="summary__row"><span class="summary__k">Rounds</span><span class="summary__v" id="wallet-summary-rounds">—</span></div>
+            <div class="summary__row"><span class="summary__k">Delay</span><span class="summary__v" id="wallet-summary-delay">—</span></div>
+          </div>
+          <button class="btn btn--full" id="btn-continue-wallet" type="button" disabled>CONTINUE</button>
+          <p id="wallet-continue-hint" class="msg msg--muted" style="margin-top:10px;">Connect a wallet to continue.</p>
+        </section>
+
+        <section class="screen app-card" id="screen-result">
+          <div class="screen-head">
+            <div>
+              <h2 class="app-h1">Result</h2>
+              <p class="trust-line">Ref: <span id="result-ref" class="mono">—</span></p>
+            </div>
+          </div>
+          <p class="explain">Your payout has been queued. <strong id="result-queue-summary">2 rounds · 24h delay</strong></p>
+          <div class="network-badge-row"><span class="badge" id="result-network-badge">—</span></div>
+          <div class="summary-card">
+            <div class="summary__row"><span class="summary__k">Reference</span><span class="summary__v summary__v--mono" id="result-reference">—</span></div>
+            <div class="summary__row"><span class="summary__k">Asset</span><span class="summary__v" id="result-asset">—</span></div>
+            <div class="summary__row"><span class="summary__k">Network</span><span class="summary__v" id="result-network">—</span></div>
+            <div class="summary__row"><span class="summary__k">Fee</span><span class="summary__v" id="result-fee">—</span></div>
+            <div class="summary__row"><span class="summary__k">Rounds</span><span class="summary__v" id="result-rounds">—</span></div>
+            <div class="summary__row"><span class="summary__k">Delay</span><span class="summary__v" id="result-delay">—</span></div>
+            <div class="summary__row"><span class="summary__k">Payout wallet</span><span class="summary__v summary__v--mono" id="result-payout-wallet">—</span></div>
+            <div class="summary__row"><span class="summary__k">Status</span><span class="summary__v"><span class="badge badge--ok" id="result-status">QUEUED</span></span></div>
+          </div>
+          <a class="btn btn--ghost btn--full" id="result-explorer-link" target="_blank" rel="noopener noreferrer nofollow" referrerpolicy="no-referrer">VIEW ON EXPLORER</a>
+          <button class="btn btn--full" id="btn-start-another" type="button" style="margin-top:12px;">START ANOTHER</button>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="section content-block" id="content">
+    <div class="container">
+      <div class="content-block__inner">
+        <h2 id="what">What a crypto mixer does</h2>
+        <p>A crypto mixer takes a deposit of cryptocurrency and returns equivalent coins to a different address. The deposit and the payout are separate transactions. They do not share an input, an output, or a timestamp. The on-chain link between the sender and the receiver is broken. E operates this process for eight assets across twelve networks. The user supplies the payout address. The user sets the fee, the number of rounds, and the delay. No account is created. No identity is collected.</p>
+
+        <h2 id="assets-networks">Supported assets and networks</h2>
+        <p>BTC on Bitcoin. ETH on Ethereum, Base, Optimism and Aurora. USDT on Ethereum, BNB Chain, Polygon, Solana and TRON. USDC on Ethereum, BNB Chain, Polygon, Avalanche and Solana. BNB on BNB Chain. SOL on Solana. LTC on Litecoin. ZEC on Zcash. Each asset is bound to its networks. A deposit address is provided for each pair. The address format matches the network. USDT on TRON uses a T-address. USDT on Solana uses a Solana address. The network is selected before the deposit address is shown.</p>
+
+        <h2 id="fee">Fee and processing time</h2>
+        <p>The fee is set by the user. The range is 0.1% to 1.5%. The default is 1%. The fee is deducted from the payout. The network fee is paid by E. The user selects the number of rounds, from 1 to 5. More rounds add separation between the deposit and the payout. The user selects the delay, from 0 to 72 hours. The payout is released after the delay. The deposit window is one hour. The countdown does not block the flow. If the window expires, the rate refreshes on the next interaction.</p>
+
+        <h2 id="deposit">How the deposit address is used</h2>
+        <p>The deposit address is shown when the user starts the flow. The address is shown in full, in a monospaced font, with no truncation. A QR code is rendered from the address. The copy button copies the address only, with no trailing space or newline. The network name is shown beside the address. A warning line states the asset and the network. The warning updates when the pair changes. The address is read from the selected pair at render time. A stale address from a previous pair does not survive a switch.</p>
+
+        <h2 id="privacy">Privacy and retention</h2>
+        <p>No account is created. No email is collected. No identity is checked. The payout address is supplied by the user. Session data is stored in browser storage. The data is cleared when the tab closes. No analytics scripts run. No tracking pixels load. No cookies are set. The only external request is to a price feed. Explorer links open with referrer suppressed. The content security policy blocks third-party scripts, third-party styles, and third-party fonts.</p>
+
+        <h2 id="faq">Frequently asked questions</h2>
+        <div class="faq-accordion" id="faq-accordion">
+          <div class="faq-accordion__item is-open">
+            <button class="faq-accordion__btn" type="button" aria-expanded="true"><span>What does a mixer do?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">Takes your deposit and returns equivalent coins to a different address, breaking the on-chain link between them.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>Do I need an account or email?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">No. No account, no email, no identity check is required at any step.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>What is the minimum deposit?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">There is no set minimum. The deposit must cover the fee you select.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>Which assets and networks are supported?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">BTC, ETH, USDT, USDC, BNB, SOL, LTC and ZEC across twelve networks.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>What fee do you take?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">The fee is set by you between 0.1% and 1.5%, deducted from the payout.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>How is the fee deducted?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">The fee is taken from the payout amount. You receive the remainder.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>How long does the payout take?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">The delay is set by you between 0 and 72 hours after the deposit is confirmed.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>Why is there a one hour window?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">The deposit address and rate are held for one hour to manage the pool.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>What happens if my deposit arrives after the window?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">The deposit is still credited but processing takes longer.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>What happens if I send on the wrong network?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">The deposit needs manual recovery. Send only the selected asset on the selected network.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>Can I reuse the same deposit address?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">No. Each deposit gets a fresh address and reference.</div></div>
+          </div>
+          <div class="faq-accordion__item">
+            <button class="faq-accordion__btn" type="button" aria-expanded="false"><span>Do you keep logs?</span><svg class="faq-accordion__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg></button>
+            <div class="faq-accordion__body"><div class="faq-accordion__answer">No account and no analytics. The mix record — deposit address, payout address, IP and user agent — is kept to deliver the payout and purged after 90 days. Session data stays in browser storage and clears when the tab closes.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">
+            <img src="assets/logos/mark.svg" alt="E" width="24" height="24">
+            <span class="footer__wordmark">E</span>
+          </div>
+          <p class="footer__desc">Crypto mixer. No account, no KYC.</p>
+        </div>
+        <div><p class="footer__col-title">Mix</p><div class="footer__col-links"><a href="http://localhost:3000/pages/bitcoin-mixer.html">Bitcoin Mixer</a><a href="http://localhost:3000/pages/ethereum-mixer.html">Ethereum Mixer</a><a href="http://localhost:3000/pages/usdt-mixer.html">USDT Mixer</a><a href="http://localhost:3000/pages/solana-mixer.html">Solana Mixer</a><a href="http://localhost:3000/pages/crypto-tumbler.html">Crypto Tumbler</a></div></div>
+        <div><p class="footer__col-title">Guide</p><div class="footer__col-links"><a href="http://localhost:3000/pages/how-it-works.html">How It Works</a><a href="http://localhost:3000/pages/guide.html">Mixer Guide</a><a href="http://localhost:3000/pages/faq.html">FAQ</a></div></div>
+        <div><p class="footer__col-title">Reference</p><div class="footer__col-links"><a href="http://localhost:3000/pages/supported-assets.html">Assets</a><a href="http://localhost:3000/pages/supported-networks.html">Networks</a><a href="http://localhost:3000/pages/fees.html">Fees</a><a href="http://localhost:3000/pages/security.html">Security</a><a href="http://localhost:3000/pages/privacy.html">Privacy</a></div></div>
+      </div>
+      <div class="footer__bottom"><span class="footer__legal">Service provided as is.</span></div>
+    </div>
+  </footer>
+
+  <div id="hard-failure" class="hard-failure hidden" role="alert">
+    <div class="hard-failure__inner">
+      <h2 class="hard-failure__title">Configuration Error</h2>
+      <p class="hard-failure__text">One or more deposit addresses failed verification.</p>
+      <pre id="hard-failure-detail" class="hard-failure__detail"></pre>
+    </div>
+  </div>
+
+  <script src="js/assets.js" defer></script>
+  <script src="js/networks.js" defer></script>
+    <script src="js/fees.js" defer></script>
+  <script src="js/validators.js" defer></script>
+  <script src="js/validation.js" defer></script>
+  <script src="config/site.js" defer></script>
+  <script src="js/qr.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/submit.js" defer></script>
+  <script src="js/connector.js" defer></script>
+  <script src="js/wallet-adapter.js" defer></script>
+  <script src="js/prices.js" defer></script>
+  <script src="js/transaction-ui.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

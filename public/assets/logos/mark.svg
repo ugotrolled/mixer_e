@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Northmix mark">
+  <path d="M16 3C10 3 6 6 6 10c0 3 3 5 7 6 3 0.5 5 1 5 2.5 0 1-1 2-3 2.5 2 0 4-1 4-3 0-2-2-3-5-3.5C10 14 8 12.5 8 10c0-2.5 3.5-5 8-5s8 2.5 8 5c0 1.5-1 2.5-3 3" fill="none" stroke="#50E69A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M13 20c-1 1.5-2 3-2 4.5 0 2 2 4.5 5 4.5s5-2.5 5-4.5c0-1.5-1-3-2-4.5" fill="none" stroke="#50E69A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="16" cy="24" r="1.5" fill="#50E69A"/>
+</svg>
